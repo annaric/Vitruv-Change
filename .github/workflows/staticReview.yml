@@ -1,4 +1,4 @@
-name: Static Code Review
+name: Checkstyle
 
 # workflow triggers
 on:
