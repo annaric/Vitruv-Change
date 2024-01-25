@@ -187,6 +187,27 @@
         </plugin>
 
         <plugin>
+          <groupId>org.jacoco</groupId>
+          <artifactId>jacoco-maven-plugin</artifactId>
+          <version>0.8.12-SNAPSHOT</version>
+          <configuration>
+            <outputDirectory>${project.build.directory}/jacoco-reports</outputDirectory>
+            <includes>
+              <include>/atomic-test/**/*</include>
+              <include>/atomic/**/*</include>
+            </includes>
+            <sourceIncludes>
+              <include>/atomic/**/*</include>
+            </sourceIncludes>
+            <classesDirectory>${project.build.directory}/classes</classesDirectory>
+            <sourceDirectory>
+              <directory>${project.basedir}/atomic/src/main/java</directory>
+            </sourceDirectory>
+            <append>true</append>
+          </configuration>
+        </plugin>
+
+        <plugin>
           <artifactId>maven-resources-plugin</artifactId>
           <version>3.3.1</version>
         </plugin>
