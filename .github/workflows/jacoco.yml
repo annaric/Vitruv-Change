@@ -33,7 +33,8 @@ jobs:
         #run: ./mvn --batch-mode --update-snapshots verify
         run: mvn clean org.jacoco:jacoco-maven-plugin:0.8.8:prepare-agent  verify org.jacoco:jacoco-maven-plugin:0.8.8:report
         #mvn clean org.jacoco:jacoco-maven-plugin:0.8.9:prepare-agent  verify org.jacoco:jacoco-maven-plugin:0.8.9:report-aggregate
-
+        #mvn clean org.jacoco:jacoco-maven-plugin:0.8.9:prepare-agent  verify org.jacoco:jacoco-maven-plugin:0.8.9:report-aggregate org.jacoco:jacoco-maven-plugin:0.8.9:merge
+        #mvn clean org.jacoco:jacoco-maven-plugin:0.8.9:prepare-agent verify org.jacoco:jacoco-maven-plugin:0.8.9:report-aggregate sonar:sonar -Dsonar.projectKey=localVitruv -Dsonar.projectName='localVitruv' -Dsonar.host.url=http://localhost:9000 -Dsonar.token=sqp_72900e6256c76923bb0920ebd6a2c6ab52fc0d3d
       - name: Add coverage to PR
         id: jacoco
         uses: madrapps/jacoco-report@v1.6.1

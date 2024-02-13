@@ -192,10 +192,16 @@
           <version>0.8.12-SNAPSHOT</version>
           <configuration>
             <outputDirectory>${project.build.directory}/jacoco-reports</outputDirectory>
-            <!--outputDirectory>target/jacoco-reports</outputDirectory-->
-            <includeCurrentProject>true</includeCurrentProject>
-            <includes>${project.parent.basedir}/atomic</includes>
+            <!--includeCurrentProject>true</includeCurrentProject-->
             <append>true</append>
+            <!--fileSets>
+              <fileSet>
+                <directory>${project.basedir}</directory>
+                <includes>
+                  <include>*.exec</include>
+                </includes>
+              </fileSet>
+            </fileSets-->
           </configuration>
         </plugin>
 
