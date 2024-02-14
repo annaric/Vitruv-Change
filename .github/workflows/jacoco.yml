@@ -31,16 +31,13 @@ jobs:
       # run Maven build
       - name: Maven Build
         #run: ./mvn --batch-mode --update-snapshots verify
-        run: mvn clean org.jacoco:jacoco-maven-plugin:0.8.8:prepare-agent  verify org.jacoco:jacoco-maven-plugin:0.8.8:report
-        #mvn clean org.jacoco:jacoco-maven-plugin:0.8.9:prepare-agent  verify org.jacoco:jacoco-maven-plugin:0.8.9:report-aggregate
-        #mvn clean org.jacoco:jacoco-maven-plugin:0.8.9:prepare-agent  verify org.jacoco:jacoco-maven-plugin:0.8.9:report-aggregate org.jacoco:jacoco-maven-plugin:0.8.9:merge
-        #mvn clean org.jacoco:jacoco-maven-plugin:0.8.9:prepare-agent verify org.jacoco:jacoco-maven-plugin:0.8.9:report-aggregate sonar:sonar -Dsonar.projectKey=localVitruv -Dsonar.projectName='localVitruv' -Dsonar.host.url=http://localhost:9000 -Dsonar.token=sqp_72900e6256c76923bb0920ebd6a2c6ab52fc0d3d
+        run: mvn clean org.jacoco:jacoco-maven-plugin:0.8.8:prepare-agent  verify org.jacoco:jacoco-maven-plugin:0.8.8:report-aggregate
       - name: Add coverage to PR
         id: jacoco
         uses: madrapps/jacoco-report@v1.6.1
         with:
           paths: |
-            ${{ github.workspace }}/**/jacoco-reports/jacoco.xml
+            ${{ github.workspace }}/report/target/jacoco-reports/index.xml
           #paths: |
            # ${{ github.workspace }}/**/build/reports/jacoco/prodNormalDebugCoverage/prodNormalDebugCoverage.xml,
             #${{ github.workspace }}/**/build/reports/jacoco/**/debugCoverage.xml
