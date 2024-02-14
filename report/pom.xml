@@ -65,17 +65,32 @@
   <dependencies>
     <dependency>
       <groupId>${project.groupId}</groupId>
-      <artifactId>tools.vitruv.change.atomic.test</artifactId>
+      <artifactId>tools.vitruv.change.atomic.tests</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
       <groupId>${project.groupId}</groupId>
-      <artifactId>tools.vitruv.change.composite.test</artifactId>
+      <artifactId>tools.vitruv.change.atomic</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
       <groupId>${project.groupId}</groupId>
-      <artifactId>tools.vitruv.change.correspondence.test</artifactId>
+      <artifactId>tools.vitruv.change.composite</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>tools.vitruv.change.composite.tests</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>tools.vitruv.change.correspondence</artifactId>
+      <version>${project.version}</version>
+    </dependency>
+    <dependency>
+      <groupId>${project.groupId}</groupId>
+      <artifactId>tools.vitruv.change.correspondence.tests</artifactId>
       <version>${project.version}</version>
     </dependency>
   </dependencies>
