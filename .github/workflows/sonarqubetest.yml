@@ -3,9 +3,9 @@ name: Sonar
 # workflow triggers
 on:
   workflow_dispatch:
-  push:
-    branches:
-      - build/pure-maven
+  #push:
+    #branches:
+      #- build/pure-maven
 
 jobs:
   sonarqube:
