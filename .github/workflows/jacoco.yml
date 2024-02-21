@@ -55,7 +55,7 @@ jobs:
       
       - name: Stage Build Results
         #run: mkdir staging && cp -r `ls -A | grep -v "staging"` staging/
-        run: mkdir staging && cp -r **/target staging/
+        run: mkdir staging && cp -r target/ staging/
         #run: mkdir staging && cp -r **/report/target/ staging/
 
        #upload staged packages
