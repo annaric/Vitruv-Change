@@ -41,7 +41,7 @@ jobs:
         uses: madrapps/jacoco-report@v1.6.1
         with:
           paths: |
-            ${{ github.workspace }}/**/target/jacoco-reports/jacoco.xml
+            ${{ github.workspace }}/target/jacoco-reports/jacoco.xml
           #${{ github.workspace }}/**/report/target/jacoco-reports/jacoco.xml
           #${{ github.workspace }}/**/jacoco.xml
           #${{ github.workspace }}/**/report/target/jacoco-reports/index.xml
@@ -55,8 +55,8 @@ jobs:
       
       - name: Stage Build Results
         #run: mkdir staging && cp -r `ls -A | grep -v "staging"` staging/
-        run: mkdir staging && cp -r target/ staging/
-        #run: mkdir staging && cp -r **/report/target/ staging/
+        #run: mkdir staging && cp -r target/ staging/
+        run: mkdir staging && cp -r ${{ github.workspace }}
 
        #upload staged packages
       - name: Upload Build Results
