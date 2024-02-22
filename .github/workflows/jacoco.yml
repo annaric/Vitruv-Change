@@ -34,14 +34,15 @@ jobs:
         run: mvn clean org.jacoco:jacoco-maven-plugin:0.8.8:prepare-agent verify org.jacoco:jacoco-maven-plugin:0.8.9:report-aggregate
       
       - name: Test moving jacoco reports
-        run:  rm -rf target/ && mkdir maintarget && cp -r report/target/* maintarget/
+        run:  rm -rf target/ && mkdir maintarget && cp -r report/target/ maintarget/
+        #run:  rm -rf target/ && mkdir maintarget && cp -r report/target/* maintarget/
 
       - name: Add coverage to PR
         id: jacoco
         uses: madrapps/jacoco-report@v1.6.1
         with:
           paths: |
-            ${{ github.workspace }}/*/jacoco-reports/jacoco.xml
+            ${{ github.workspace }}/maintarget/**/target/jacoco-reports/jacoco.xml
           #${{ github.workspace }}/**/report/target/jacoco-reports/jacoco.xml
           #${{ github.workspace }}/**/jacoco.xml
           #${{ github.workspace }}/**/report/target/jacoco-reports/index.xml
@@ -57,7 +58,7 @@ jobs:
         #run: mkdir staging && cp -r `ls -A | grep -v "staging"` staging/
         #run: mkdir staging && cp -r target/ staging/
         #run: mkdir staging && cp -r ${{ github.workspace }}/maintarget staging/
-        run: mkdir staging && cp ${{ github.workspace }}/*/jacoco-reports/jacoco.xml staging/
+        run: mkdir staging && cp ${{ github.workspace }}/maintarget/**/target/jacoco-reports/jacoco.xml staging/
 
        #upload staged packages
       - name: Upload Build Results
