@@ -16,6 +16,16 @@ jobs:
     permissions:
       contents: read
       pull-requests: write
+      actions: write
+      checks: write
+      id-token: write
+      #deployments: read|write
+      issues: write
+      packages: read
+      #packages: write
+      #repository-projects: read|write
+      #security-events: read|write
+      statuses: read
     steps:
       - name: Checkout
         uses: actions/checkout@v4.1.1
