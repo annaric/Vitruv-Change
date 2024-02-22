@@ -228,6 +228,25 @@
         </plugin>
 
         <plugin>
+          <groupId>org.jacoco</groupId>
+          <artifactId>jacoco-maven-plugin</artifactId>
+          <version>0.8.12-SNAPSHOT</version>
+          <configuration>
+            <outputDirectory>${project.build.directory}/jacoco-reports</outputDirectory>
+            <!--append>true</append-->
+            <!--includeCurrentProject>true</includeCurrentProject-->
+            <!--fileSets>
+              <fileSet>
+                <directory>${project.basedir}</directory>
+                <includes>
+                  <include>*.exec</include>
+                </includes>
+              </fileSet>
+            </fileSets-->
+          </configuration>
+        </plugin>
+
+        <plugin>
           <artifactId>maven-resources-plugin</artifactId>
           <version>3.3.1</version>
         </plugin>

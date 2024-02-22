@@ -41,6 +41,7 @@
     <module>interaction.model</module>
     <module>propagation</module>
     <module>testutils</module>
+    <module>report</module>
   </modules>
 
   <!-- Additional Repositories -->
