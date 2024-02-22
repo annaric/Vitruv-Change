@@ -1,0 +1,44 @@
+name: Jacoco
+
+# workflow triggers
+on:
+  # manually
+  workflow_dispatch:
+  workflow_call:
+  # PRs on `main`
+  pull_request:
+    branches:
+    - build/pure-maven
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.1.1
+        
+      # setup Java and cache Maven dependencies
+      - name: Setup Java
+        uses: actions/setup-java@v3.13.0
+        with:
+          distribution: 'temurin'
+          java-version: '17'
+          check-latest: true
+          cache: 'maven'
+
+      # run Maven build
+      - name: Maven Build
+        run: ./mvnw --batch-mode --update-snapshots verify
+
+      - name: Add coverage to PR
+        id: jacoco
+        uses: madrapps/jacoco-report@v1.6.1
+        with:
+          paths: |
+            ${{ github.workspace }}/**/build/reports/jacoco/prodNormalDebugCoverage/prodNormalDebugCoverage.xml,
+            ${{ github.workspace }}/**/build/reports/jacoco/**/debugCoverage.xml
+          token: ${{ secrets.GITHUB_TOKEN }}
+          min-coverage-overall: 40
+          min-coverage-changed-files: 60
