@@ -1,12 +1,14 @@
-name: Jacoco
+name: JacocoNew
 
 # workflow triggers
 on:
   # manually
   workflow_dispatch:
   workflow_call:
+  # PRs on `main`
   pull_request:
-
+    #branches:
+    #- main
 
 jobs:
   build:
