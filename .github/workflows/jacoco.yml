@@ -56,7 +56,8 @@ jobs:
       - name: Stage Build Results
         #run: mkdir staging && cp -r `ls -A | grep -v "staging"` staging/
         #run: mkdir staging && cp -r target/ staging/
-        run: mkdir staging && cp -r ${{ github.workspace }}/maintarget staging/
+        #run: mkdir staging && cp -r ${{ github.workspace }}/maintarget staging/
+        run: mkdir staging && cp ${{ github.workspace }}/*/jacoco-reports/jacoco.xml staging/
 
        #upload staged packages
       - name: Upload Build Results
