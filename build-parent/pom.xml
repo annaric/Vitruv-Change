@@ -192,8 +192,8 @@
           <version>0.8.12-SNAPSHOT</version>
           <configuration>
             <outputDirectory>${project.build.directory}/jacoco-reports</outputDirectory>
+            <!--append>true</append-->
             <!--includeCurrentProject>true</includeCurrentProject-->
-            <append>true</append>
             <!--fileSets>
               <fileSet>
                 <directory>${project.basedir}</directory>
