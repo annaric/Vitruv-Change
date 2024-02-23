@@ -232,7 +232,7 @@
       </plugins>
     </pluginManagement>
   </build>
-  <!--reporting>
+  <reporting>
     <plugins>
       <plugin>
         <groupId>org.jacoco</groupId>
@@ -247,7 +247,7 @@
         </reportSets>
       </plugin>
     </plugins>
-  </reporting-->
+  </reporting>
 
   <!-- Eclipse SWT has different implementations from different platforms, which cannot be resolved automatically -->
   <profiles>
