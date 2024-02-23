@@ -189,7 +189,7 @@
         <plugin>
           <groupId>org.jacoco</groupId>
           <artifactId>jacoco-maven-plugin</artifactId>
-          <version>0.8.12-SNAPSHOT</version>
+          <version>0.8.7</version>
           <configuration>
             <outputDirectory>${project.build.directory}/jacoco-reports</outputDirectory>
             <!--append>true</append--> <!--brauch man nur wenn man auch die coverage der anderen auf die klasse testen will--> 
