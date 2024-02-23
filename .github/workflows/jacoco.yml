@@ -53,7 +53,7 @@ jobs:
         uses: madrapps/jacoco-report@v1.6.1
         with:
           paths: |
-            ${{ github.workspace }}/atomic-test/target/jacoco-reports/jacoco.xml,
+            ${{ github.workspace }}/atomic.test/target/jacoco-reports/jacoco.xml,
           #${{ github.workspace }}/maintarget/jacoco-reports/jacoco.xml
           #${{ github.workspace }}/**/report/target/jacoco-reports/jacoco.xml
           #${{ github.workspace }}/**/jacoco.xml
