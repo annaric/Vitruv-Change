@@ -187,6 +187,25 @@
         </plugin>
 
         <plugin>
+          <groupId>org.jacoco</groupId>
+          <artifactId>jacoco-maven-plugin</artifactId>
+          <version>0.8.7</version>
+          <configuration>
+            <outputDirectory>${project.build.directory}/jacoco-reports</outputDirectory>
+            <!--append>true</append--> <!--brauch man nur wenn man auch die coverage der anderen auf die klasse testen will--> 
+            <!--includeCurrentProject>true</includeCurrentProject-->
+            <!--fileSets>
+              <fileSet>
+                <directory>${project.basedir}</directory>
+                <includes>
+                  <include>*.exec</include>
+                </includes>
+              </fileSet>
+            </fileSets-->
+          </configuration>
+        </plugin>
+
+        <plugin>
           <artifactId>maven-resources-plugin</artifactId>
           <version>3.3.1</version>
         </plugin>
@@ -213,6 +232,22 @@
       </plugins>
     </pluginManagement>
   </build>
+  <reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <reportSets>
+          <reportSet>
+            <reports>
+              <!--> select non-aggregate reports -->
+              <report>report</report>
+            </reports>
+          </reportSet>
+        </reportSets>
+      </plugin>
+    </plugins>
+  </reporting>
 
   <!-- Eclipse SWT has different implementations from different platforms, which cannot be resolved automatically -->
   <profiles>

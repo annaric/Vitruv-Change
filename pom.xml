@@ -41,6 +41,7 @@
     <module>interaction.model</module>
     <module>propagation</module>
     <module>testutils</module>
+    <module>report</module>
   </modules>
 
   <!-- Additional Repositories -->
@@ -56,11 +57,11 @@
         <groupId>org.openntf.maven</groupId>
         <artifactId>p2-layout-resolver</artifactId>
       </plugin>
-      <plugin>
+      <!--plugin>
         <groupId>org.codehaus.mojo</groupId>
         <artifactId>sonar-maven-plugin</artifactId>
         <version>3.9.0.2155</version>
-      </plugin>
+      </plugin-->
     </plugins>
   </build>
 
