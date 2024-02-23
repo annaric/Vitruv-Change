@@ -53,8 +53,7 @@ jobs:
         uses: madrapps/jacoco-report@v1.6.1
         with:
           paths: |
-            ${{ github.workspace }}/**/build/reports/jacoco/prodNormalDebugCoverage/prodNormalDebugCoverage.xml,
-            ${{ github.workspace }}/**/build/reports/jacoco/**/debugCoverage.xml
+            ${{ github.workspace }}/**/target/jacoco-reports/jacoco.xml
           #${{ github.workspace }}/maintarget/jacoco-reports/jacoco.xml
           #${{ github.workspace }}/**/report/target/jacoco-reports/jacoco.xml
           #${{ github.workspace }}/**/jacoco.xml
