@@ -65,6 +65,47 @@
         </plugin>
 
         <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <version>0.8.7</version>
+        <configuration>
+            <outputDirectory>${project.build.directory}/jacoco-reports</outputDirectory>
+            <!--rules>
+              <rule>
+                <element>BUNDLE</element>
+                <limits>
+                  <limit>
+                    <counter>INSTRUCTION</counter>
+                    <value>COVEREDRATIO</value>
+                    <minimum>0.80</minimum>
+                  </limit>
+                  <limit>
+                    <counter>CLASS</counter>
+                    <value>MISSEDCOUNT</value>
+                    <maximum>0</maximum>
+                  </limit>
+                </limits>
+              </rule>
+            </rules-->
+        </configuration>
+        <!--executions>
+                <execution>
+                    <id>prepare-agent</id>
+                    <goals>
+                        <goal>prepare-agent</goal>
+                    </goals>
+                </execution>
+                <execution>
+                    <id>report</id>
+                    <phase>verify</phase>
+                    <goals>
+                        <goal>report</goal>
+                    </goals>
+                </execution>
+            </executions-->
+      </plugin>
+
+        <plugin>
           <groupId>org.codehaus.mojo</groupId>
           <artifactId>build-helper-maven-plugin</artifactId>
           <version>3.4.0</version>
@@ -213,6 +254,22 @@
       </plugins>
     </pluginManagement>
   </build>
+
+  <!--reporting>
+    <plugins>
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <reportSets>
+          <reportSet>
+            <reports>
+              <report>report</report>
+            </reports>
+          </reportSet>
+        </reportSets>
+      </plugin>
+    </plugins>
+  </reporting-->
 
   <!-- Eclipse SWT has different implementations from different platforms, which cannot be resolved automatically -->
   <profiles>
